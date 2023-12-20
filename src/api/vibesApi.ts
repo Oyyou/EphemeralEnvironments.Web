@@ -2,16 +2,20 @@ import { useEffect, useState } from "react";
 import { API_BASE_URL } from "./apiConfig"
 
 const getVibes = async (): Promise<string[]> => {
-    const response = await fetch(`${API_BASE_URL}/vibes`, {
-        method: "GET",
-    });
+    try {
+        const response = await fetch(`${API_BASE_URL}/vibes`, {
+            method: "GET",
+        });
 
-    if (!response.ok) {
-        throw new Error(`Error fetching vibes: ${response.statusText}`);
+        if (!response.ok) {
+            throw new Error(`Error fetching vibes: ${response.statusText}`);
+        }
+
+        const vibes = await response.json();
+        return vibes;
+    } catch {
+        throw new Error("Failed vibe check");
     }
-
-    const vibes = await response.json();
-    return vibes;
 }
 
 export const useGetVibes = () => {

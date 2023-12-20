@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  react-app:
+    container_name: "ee-web"
+    image: ${DOCKER_REGISTRY-}ee-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
