@@ -1,0 +1,33 @@
+pipeline:
+  identifier: Build_Oyyou_EphemeralEnvironments_Web_1702467745587
+  name: Build EphemeralEnvironments.Web
+  orgIdentifier: default
+  projectIdentifier: default_project
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1702461921176
+        repoName: Oyyou/EphemeralEnvironments.Web
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: npminstall
+                  name: npm_install
+                  spec:
+                    command: npm install
+                  timeout: ""
+                  type: Run
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+        type: CI

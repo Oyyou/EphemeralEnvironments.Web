@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Oyyou_EphemeralEnvironments_Web_1702467745587-push-trigger-input-set
+  identifier: Build_Oyyou_EphemeralEnvironments_Web_1702467745587pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Oyyou_EphemeralEnvironments_Web_1702467745587
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
