@@ -9,9 +9,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    networks:
+      - ee_net
     expose:
       - 3000
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=development
+
+networks:
+  ee_net:
+    external: true
