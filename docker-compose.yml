@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  react-app:
+  ee.web:
     labels:
       shipyard.route: '/'
     container_name: "ee-web"
