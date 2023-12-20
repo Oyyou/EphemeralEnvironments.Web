@@ -3,6 +3,7 @@ version: '3'
 services:
   ee.web:
     labels:
+      shipyard.primary-route: true
       shipyard.route: '/'
     container_name: "ee-web"
     image: ${DOCKER_REGISTRY-}ee-web
