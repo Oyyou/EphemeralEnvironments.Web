@@ -2,6 +2,8 @@ version: '3'
 
 services:
   react-app:
+    labels:
+      shipyard.route: '/'
     container_name: "ee-web"
     image: ${DOCKER_REGISTRY-}ee-web
     build:
