@@ -11,6 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       'api': path.resolve(__dirname, 'src/api'),
+      'components': path.resolve(__dirname, 'src/components'),
       'routes': path.resolve(__dirname, 'src/routes'),
     }
   }
