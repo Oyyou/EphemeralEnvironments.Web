@@ -19,7 +19,7 @@ const getVibes = async (): Promise<string[]> => {
 }
 
 export const useGetVibes = () => {
-    const [vibes, setVibes] = useState<String[]>([]);
+    const [vibes, setVibes] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState();
 
@@ -30,6 +30,9 @@ export const useGetVibes = () => {
                 const vibes = await getVibes();
                 setVibes(vibes);
             } catch (error: any) {
+                setVibes([
+                    '=('
+                ])
                 setError(error);
             } finally {
                 setIsLoading(false);
