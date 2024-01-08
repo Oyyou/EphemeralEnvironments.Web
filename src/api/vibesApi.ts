@@ -22,7 +22,7 @@ const getVibes = async (): Promise<IVibe[]> => {
 export const useVibes = () => {
     const [vibes, setVibes] = useState<IVibe[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState();
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const runGetVibes = async () => {
@@ -30,8 +30,9 @@ export const useVibes = () => {
                 const vibes = await getVibes();
                 setVibes(vibes);
             } catch (error: any) {
+                const { message } = error as Error;
                 setVibes([])
-                setError(error);
+                setError(message);
             } finally {
                 setIsLoading(false);
             }
