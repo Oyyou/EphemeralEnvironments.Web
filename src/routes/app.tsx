@@ -1,5 +1,5 @@
 import { useVibes } from "api/vibesApi";
-import { CreateVibe, VibesDropDown } from "components";
+import { CreateVibe, Header, VibesDropDown } from "components";
 
 const AppRoute = () => {
     const {
@@ -11,6 +11,7 @@ const AppRoute = () => {
     
     return (
         <div>
+            <Header />
             <VibesDropDown vibes={vibes} isLoading={isLoadingVibes} error={error} />
             <CreateVibe createVibe={createVibe} />
         </div>
