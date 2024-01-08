@@ -12,6 +12,7 @@ const AppRoute = () => {
     return (
         <div>
             <Header />
+            <h1>Testing</h1>
             <VibesDropDown vibes={vibes} isLoading={isLoadingVibes} error={error} />
             <CreateVibe createVibe={createVibe} />
         </div>
